@@ -36,6 +36,11 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' role='img' aria-label='Safetech Resourcing'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F3A'/%3E%3Cg transform='translate%287 7%29 scale%280.78125%29'%3E%3Cpath d='M32 4 L54 12 V30 C54 45 44.5 55 32 60 C19.5 55 10 45 10 30 V12 Z' fill='%23FFFFFF'/%3E%3Cpath d='M20 45 C20 30 29.5 20.5 45 18.5 C45 34 35.5 43.5 20 45 Z' fill='%2310B981'/%3E%3Cpath d='M20 45 L29.5 35.5 L39 26' fill='none' stroke='%230B1F3A' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M29.5 35.5 V29.5' fill='none' stroke='%230B1F3A' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='29.5' cy='28.5' r='2.4' fill='%230B1F3A'/%3E%3Ccircle cx='39.5' cy='25.5' r='2.4' fill='%230B1F3A'/%3E%3C/g%3E%3C/svg%3E" />
   <link rel="apple-touch-icon" href="logo/safetech-icon-512.png" />
 
+  <!-- Inter font (same typeface as the logo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <!-- Tailwind CSS via CDN (fine for a small static site on GitHub Pages) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -47,8 +52,8 @@
             emerald: { 600: '#059669', 500: '#10B981', 400: '#34D399', 50: '#ECFDF5' }
           },
           fontFamily: {
-            // System fonts: fast, and no third-party font requests (better for privacy)
-            sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+            // Inter (Google Fonts) to match the logo, with system fonts as fallback
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
           }
         }
       }
@@ -130,15 +135,16 @@
       <div class="flex items-center justify-between h-20">
 
         <!-- Logo + name + tagline -->
-        <a href="#home" class="flex items-center gap-3 group" aria-label="Safetech Resourcing Ltd — back to top">
+        <a href="#home" class="flex items-center gap-3 group" aria-label="Safetech Resourcing Ltd: back to top">
           <!-- Logo: white shield (safety & compliance) + leaf (environment) with circuit vein (IT), on a navy tile -->
-          <svg class="w-11 h-11 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
+          <svg class="w-12 h-12 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
             <rect width="64" height="64" rx="14" fill="#0B1F3A"/>
             <g transform="translate(7 7) scale(0.78125)"><path d="M32 4 L54 12 V30 C54 45 44.5 55 32 60 C19.5 55 10 45 10 30 V12 Z" fill="#FFFFFF"/><path d="M20 45 C20 30 29.5 20.5 45 18.5 C45 34 35.5 43.5 20 45 Z" fill="#10B981"/><path d="M20 45 L29.5 35.5 L39 26" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><path d="M29.5 35.5 V29.5" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><circle cx="29.5" cy="28.5" r="2.4" fill="#0B1F3A"/><circle cx="39.5" cy="25.5" r="2.4" fill="#0B1F3A"/></g>
           </svg>
-          <span class="flex flex-col leading-tight">
-            <span class="text-navy-900 font-bold text-lg tracking-tight">Safetech Resourcing <span class="text-emerald-600">Ltd</span></span>
-            <span class="hidden sm:block text-[11px] text-slate-500 font-medium">Specialised Recruitment Solutions in IT &amp; Environmental Sectors</span>
+          <!-- Wordmark: matches the official logo (bold "Safetech" + spaced "RESOURCING") -->
+          <span class="flex flex-col gap-1.5">
+            <span class="text-navy-900 font-extrabold text-2xl leading-none" style="letter-spacing:-0.02em">Safetech</span>
+            <span class="text-emerald-700 font-bold text-[10px] leading-none" style="letter-spacing:0.34em">RESOURCING</span>
           </span>
         </a>
 
@@ -453,7 +459,7 @@
             <p><strong class="text-navy-900">Special category data.</strong> Please do not include sensitive information (for example health, religion or ethnicity) in your CV unless it is relevant to a reasonable adjustment you want us to know about.</p>
             <p><strong class="text-navy-900">Transfers.</strong> Your data is stored with UK-based or adequately protected service providers. If data is transferred outside the UK, we make sure appropriate safeguards are in place as required by UK data protection law.</p>
             <p><strong class="text-navy-900">Your rights.</strong> Under the UK GDPR and the Data Protection Act 2018, you can ask to access, correct, delete or restrict use of your data, object to its use, or request a copy in a portable format, by emailing us. We will respond within one month. If you are unhappy with how we handle your data, please contact us first so we can try to put it right. You also have the right to complain to the Information Commissioner's Office at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener noreferrer" class="underline">ico.org.uk</a>.</p>
-            <p><strong class="text-navy-900">Cookies.</strong> This website does not set cookies or use analytics or tracking, so no cookie banner is required under the Privacy and Electronic Communications Regulations (PECR). The page loads its styling from a third-party content delivery network (cdn.tailwindcss.com), which will see your IP address as part of normal web traffic, and is hosted on GitHub Pages, which may log visitor IP addresses for security.</p>
+            <p><strong class="text-navy-900">Cookies.</strong> This website does not set cookies or use analytics or tracking, so no cookie banner is required under the Privacy and Electronic Communications Regulations (PECR). The page loads its styling and font from third-party content delivery networks (cdn.tailwindcss.com and Google Fonts), which will see your IP address as part of normal web traffic, and is hosted on GitHub Pages, which may log visitor IP addresses for security.</p>
             <p class="text-xs text-slate-500">Last updated: November 2026.</p>
           </div>
         </details>
@@ -518,7 +524,10 @@
         <div>
           <div class="flex items-center gap-3">
             <svg class="w-10 h-10 shrink-0" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 L54 12 V30 C54 45 44.5 55 32 60 C19.5 55 10 45 10 30 V12 Z" fill="#FFFFFF"/><path d="M20 45 C20 30 29.5 20.5 45 18.5 C45 34 35.5 43.5 20 45 Z" fill="#10B981"/><path d="M20 45 L29.5 35.5 L39 26" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><path d="M29.5 35.5 V29.5" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><circle cx="29.5" cy="28.5" r="2.4" fill="#0B1F3A"/><circle cx="39.5" cy="25.5" r="2.4" fill="#0B1F3A"/></svg>
-            <p class="text-white font-bold text-lg">Safetech Resourcing <span class="text-emerald-400">Ltd</span></p>
+            <span class="flex flex-col gap-1.5">
+              <span class="text-white font-extrabold text-2xl leading-none" style="letter-spacing:-0.02em">Safetech</span>
+              <span class="text-emerald-400 font-bold text-[10px] leading-none" style="letter-spacing:0.34em">RESOURCING</span>
+            </span>
           </div>
           <p class="mt-2 text-sm">Specialised Recruitment Solutions in IT &amp; Environmental Sectors.</p>
         </div>
