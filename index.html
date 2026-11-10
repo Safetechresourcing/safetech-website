@@ -27,10 +27,14 @@
   <meta property="og:description" content="Specialist recruitment connecting forward-thinking organisations with exceptional IT and Environmental talent across the UK." />
   <meta property="og:url" content="https://www.safetechresourcing.co.uk/" />
   <meta property="og:locale" content="en_GB" />
+  <meta property="og:image" content="https://www.safetechresourcing.co.uk/logo/safetech-share-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="theme-color" content="#0B1F3A" />
 
   <!-- Favicon: the brand mark as an inline SVG (no extra file needed) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 3 42 13.5v21L24 45 6 34.5v-21Z' fill='%230B1F3A'/%3E%3Cpath d='M24 14c7 0 10 5 10 11-5 0-10-2-12-7' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M15 31h7l4-6h7' fill='none' stroke='%2393C5FD' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='15' cy='31' r='2.5' fill='%2393C5FD'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' role='img' aria-label='Safetech Resourcing'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F3A'/%3E%3Cg transform='translate%287 7%29 scale%280.78125%29'%3E%3Cpath d='M32 4 L54 12 V30 C54 45 44.5 55 32 60 C19.5 55 10 45 10 30 V12 Z' fill='%23FFFFFF'/%3E%3Cpath d='M20 45 C20 30 29.5 20.5 45 18.5 C45 34 35.5 43.5 20 45 Z' fill='%2310B981'/%3E%3Cpath d='M20 45 L29.5 35.5 L39 26' fill='none' stroke='%230B1F3A' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M29.5 35.5 V29.5' fill='none' stroke='%230B1F3A' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='29.5' cy='28.5' r='2.4' fill='%230B1F3A'/%3E%3Ccircle cx='39.5' cy='25.5' r='2.4' fill='%230B1F3A'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="logo/safetech-icon-512.png" />
 
   <!-- Tailwind CSS via CDN (fine for a small static site on GitHub Pages) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -127,24 +131,10 @@
 
         <!-- Logo + name + tagline -->
         <a href="#home" class="flex items-center gap-3 group" aria-label="Safetech Resourcing Ltd — back to top">
-          <!-- Logo: hexagon (structure/tech) + circuit trace (IT) + leaf (environment) -->
-          <svg class="w-11 h-11 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
-            <defs>
-              <linearGradient id="hexGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#12305A"/>
-                <stop offset="1" stop-color="#0B1F3A"/>
-              </linearGradient>
-            </defs>
-            <path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="url(#hexGrad)"/>
-            <path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="none" stroke="#10B981" stroke-opacity=".35" stroke-width="1"/>
-            <!-- leaf -->
-            <path d="M22 18c2-4 7-5.5 12-4.5 1 5-1 10.5-6.5 12.5-2.5.9-5 .6-6.6-.5" fill="#10B981"/>
-            <path d="M21 26c3-3 6-6 10-9" stroke="#0B1F3A" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-            <!-- circuit trace -->
-            <path d="M12 32h8l4-5" fill="none" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M24 35h9" fill="none" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="12" cy="32" r="2.2" fill="#93C5FD"/>
-            <circle cx="35" cy="35" r="2.2" fill="#93C5FD"/>
+          <!-- Logo: white shield (safety & compliance) + leaf (environment) with circuit vein (IT), on a navy tile -->
+          <svg class="w-11 h-11 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0B1F3A"/>
+            <g transform="translate(7 7) scale(0.78125)"><path d="M32 4 L54 12 V30 C54 45 44.5 55 32 60 C19.5 55 10 45 10 30 V12 Z" fill="#FFFFFF"/><path d="M20 45 C20 30 29.5 20.5 45 18.5 C45 34 35.5 43.5 20 45 Z" fill="#10B981"/><path d="M20 45 L29.5 35.5 L39 26" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><path d="M29.5 35.5 V29.5" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><circle cx="29.5" cy="28.5" r="2.4" fill="#0B1F3A"/><circle cx="39.5" cy="25.5" r="2.4" fill="#0B1F3A"/></g>
           </svg>
           <span class="flex flex-col leading-tight">
             <span class="text-navy-900 font-bold text-lg tracking-tight">Safetech Resourcing <span class="text-emerald-600">Ltd</span></span>
@@ -526,7 +516,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid md:grid-cols-3 gap-10">
         <div>
-          <p class="text-white font-bold text-lg">Safetech Resourcing <span class="text-emerald-400">Ltd</span></p>
+          <div class="flex items-center gap-3">
+            <svg class="w-10 h-10 shrink-0" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 L54 12 V30 C54 45 44.5 55 32 60 C19.5 55 10 45 10 30 V12 Z" fill="#FFFFFF"/><path d="M20 45 C20 30 29.5 20.5 45 18.5 C45 34 35.5 43.5 20 45 Z" fill="#10B981"/><path d="M20 45 L29.5 35.5 L39 26" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><path d="M29.5 35.5 V29.5" fill="none" stroke="#0B1F3A" stroke-width="2.4" stroke-linecap="round"/><circle cx="29.5" cy="28.5" r="2.4" fill="#0B1F3A"/><circle cx="39.5" cy="25.5" r="2.4" fill="#0B1F3A"/></svg>
+            <p class="text-white font-bold text-lg">Safetech Resourcing <span class="text-emerald-400">Ltd</span></p>
+          </div>
           <p class="mt-2 text-sm">Specialised Recruitment Solutions in IT &amp; Environmental Sectors.</p>
         </div>
         <nav aria-label="Footer navigation">
