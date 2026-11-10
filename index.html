@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+  <!-- =====================================================================
+       Safetech Resourcing Ltd — single-page website (GitHub Pages ready)
+       ---------------------------------------------------------------------
+       BEFORE PUBLISHING: search this file for "TODO" and replace every
+       placeholder in [square brackets] with your real details:
+         1. Confirm the data retention period in the Privacy Notice (24 months)
+         2. (Optional) LinkedIn URL
+       ===================================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Safetech Resourcing Ltd | Specialist IT &amp; Environmental Recruitment UK</title>
+  <meta name="description" content="Safetech Resourcing Ltd is a UK specialist recruitment consultancy placing permanent and contract professionals across Information Technology and Environmental sectors. ICO registered." />
+  <meta name="keywords" content="IT recruitment UK, environmental recruitment, EIA consultant jobs, ESIA contract roles, sustainability recruitment, Telford recruitment agency" />
+  <meta name="author" content="Safetech Resourcing Ltd" />
+  <meta name="robots" content="index, follow" />
+  <!-- TODO: if you use a custom domain, set it here -->
+  <link rel="canonical" href="https://www.safetechresourcing.co.uk/" />
+
+  <!-- Open Graph (how the site looks when shared on LinkedIn etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Safetech Resourcing Ltd | IT &amp; Environmental Recruitment" />
+  <meta property="og:description" content="Specialist recruitment connecting forward-thinking organisations with exceptional IT and Environmental talent across the UK." />
+  <meta property="og:url" content="https://www.safetechresourcing.co.uk/" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="theme-color" content="#0B1F3A" />
+
+  <!-- Favicon: the brand mark as an inline SVG (no extra file needed) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 3 42 13.5v21L24 45 6 34.5v-21Z' fill='%230B1F3A'/%3E%3Cpath d='M24 14c7 0 10 5 10 11-5 0-10-2-12-7' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M15 31h7l4-6h7' fill='none' stroke='%2393C5FD' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='15' cy='31' r='2.5' fill='%2393C5FD'/%3E%3C/svg%3E" />
+
+  <!-- Tailwind CSS via CDN (fine for a small static site on GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:    { 950: '#06122A', 900: '#0B1F3A', 800: '#12305A', 700: '#1B4176', 100: '#E6EDF7' },
+            emerald: { 600: '#059669', 500: '#10B981', 400: '#34D399', 50: '#ECFDF5' }
+          },
+          fontFamily: {
+            // System fonts: fast, and no third-party font requests (better for privacy)
+            sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Subtle grid texture for the hero */
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+    /* Offset anchor jumps so the sticky header doesn't cover headings */
+    section[id] { scroll-margin-top: 88px; }
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+
+  <!-- Structured data: tells Google who you are -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EmploymentAgency",
+    "name": "Safetech Resourcing Ltd",
+    "description": "Specialist recruitment consultancy for the Information Technology and Environmental sectors.",
+    "url": "https://www.safetechresourcing.co.uk/",
+    "email": "syed.tahir@safetechresourcing.co.uk",
+    "telephone": "+447343130407",
+    "areaServed": "GB",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "129b-129c Crescent Road, Hadley",
+      "addressLocality": "Telford",
+      "postalCode": "TF1 5LE",
+      "addressCountry": "GB"
+    }
+  }
+  </script>
+
+  <!-- Structured data: lets the vacancy appear in Google for Jobs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "EIA Consultant (Environmental Impact Assessment)",
+    "description": "<p>12-month initial contract, fully remote (UK-wide). Planning, coordinating and overseeing client-side delivery of Environmental and Social Impact Assessments (ESIAs) in line with international lender standards, including the IFC Performance Standards and the World Bank Environmental and Social Framework (ESF).</p>",
+    "datePosted": "2026-11-10",
+    "validThrough": "2027-01-31T23:59",
+    "employmentType": "CONTRACTOR",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Safetech Resourcing Ltd",
+      "sameAs": "https://www.safetechresourcing.co.uk/"
+    },
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": { "@type": "Country", "name": "United Kingdom" },
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "GBP",
+      "value": { "@type": "QuantitativeValue", "minValue": 300, "maxValue": 350, "unitText": "DAY" }
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-700 font-sans antialiased">
+
+  <!-- Skip link for keyboard and screen-reader users -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-white focus:text-navy-900 focus:px-4 focus:py-2 focus:rounded-md focus:shadow">Skip to main content</a>
+
+  <!-- =========================== HEADER / NAV =========================== -->
+  <header id="top" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo + name + tagline -->
+        <a href="#home" class="flex items-center gap-3 group" aria-label="Safetech Resourcing Ltd — back to top">
+          <!-- Logo: hexagon (structure/tech) + circuit trace (IT) + leaf (environment) -->
+          <svg class="w-11 h-11 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+            <defs>
+              <linearGradient id="hexGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#12305A"/>
+                <stop offset="1" stop-color="#0B1F3A"/>
+              </linearGradient>
+            </defs>
+            <path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="url(#hexGrad)"/>
+            <path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="none" stroke="#10B981" stroke-opacity=".35" stroke-width="1"/>
+            <!-- leaf -->
+            <path d="M22 18c2-4 7-5.5 12-4.5 1 5-1 10.5-6.5 12.5-2.5.9-5 .6-6.6-.5" fill="#10B981"/>
+            <path d="M21 26c3-3 6-6 10-9" stroke="#0B1F3A" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            <!-- circuit trace -->
+            <path d="M12 32h8l4-5" fill="none" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 35h9" fill="none" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="32" r="2.2" fill="#93C5FD"/>
+            <circle cx="35" cy="35" r="2.2" fill="#93C5FD"/>
+          </svg>
+          <span class="flex flex-col leading-tight">
+            <span class="text-navy-900 font-bold text-lg tracking-tight">Safetech Resourcing <span class="text-emerald-600">Ltd</span></span>
+            <span class="hidden sm:block text-[11px] text-slate-500 font-medium">Specialised Recruitment Solutions in IT &amp; Environmental Sectors</span>
+          </span>
+        </a>
+
+        <!-- Desktop navigation -->
+        <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-navy-900 hover:bg-slate-100">Home</a>
+          <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-navy-900 hover:bg-slate-100">About Us</a>
+          <a href="#vacancies" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-navy-900 hover:bg-slate-100">Current Vacancies</a>
+          <a href="#compliance" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-navy-900 hover:bg-slate-100">Compliance &amp; Trust</a>
+          <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-navy-900 hover:bg-slate-100">Contact</a>
+          <a href="mailto:syed.tahir@safetechresourcing.co.uk?subject=Recruitment%20Enquiry" class="ml-3 inline-flex items-center px-4 py-2 rounded-md bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2">Get in Touch</a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" type="button" class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-md text-navy-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
+          <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile navigation -->
+    <nav id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white" aria-label="Mobile navigation">
+      <div class="px-4 py-3 space-y-1">
+        <a href="#home" class="block px-3 py-3 rounded-md font-medium text-slate-700 hover:bg-slate-100">Home</a>
+        <a href="#about" class="block px-3 py-3 rounded-md font-medium text-slate-700 hover:bg-slate-100">About Us</a>
+        <a href="#vacancies" class="block px-3 py-3 rounded-md font-medium text-slate-700 hover:bg-slate-100">Current Vacancies</a>
+        <a href="#compliance" class="block px-3 py-3 rounded-md font-medium text-slate-700 hover:bg-slate-100">Compliance &amp; Trust</a>
+        <a href="#contact" class="block px-3 py-3 rounded-md font-medium text-slate-700 hover:bg-slate-100">Contact</a>
+        <a href="mailto:syed.tahir@safetechresourcing.co.uk?subject=Recruitment%20Enquiry" class="block text-center mt-2 px-3 py-3 rounded-md bg-emerald-600 text-white font-semibold">Get in Touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- =============================== HERO =============================== -->
+    <section id="home" class="relative overflow-hidden bg-navy-900 text-white">
+      <div class="absolute inset-0 hero-grid" aria-hidden="true"></div>
+      <div class="absolute -top-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-emerald-500/20 blur-3xl" aria-hidden="true"></div>
+      <div class="absolute -bottom-40 -left-24 w-[26rem] h-[26rem] rounded-full bg-blue-500/10 blur-3xl" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <p class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300 tracking-wide uppercase">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> IT &amp; Environmental Recruitment · UK-wide
+          </p>
+          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08]">
+            The right specialists for<br class="hidden sm:block" />
+            <span class="text-emerald-400">technology</span> and <span class="text-emerald-400">sustainability</span>.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+            We connect top-tier IT and Environmental professionals with forward-thinking organisations, filling the permanent and contract roles that drive innovation and responsible growth.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="#vacancies" class="inline-flex justify-center items-center px-6 py-3.5 rounded-md bg-emerald-500 text-navy-950 font-semibold hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-navy-900">
+              View Current Vacancies
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+            <a href="#contact" class="inline-flex justify-center items-center px-6 py-3.5 rounded-md border border-white/25 text-white font-semibold hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50">
+              Hiring? Talk to Us
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero side panel: honest trust points (no invented statistics) -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 backdrop-blur-sm">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-400">Why work with us</h2>
+            <ul class="mt-5 space-y-5">
+              <li class="flex gap-4">
+                <span class="flex-none w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 grid place-items-center" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7l7-4z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg>
+                </span>
+                <div><p class="font-semibold text-white">ICO registered</p><p class="text-sm text-slate-400">Your personal data handled lawfully and securely.</p></div>
+              </li>
+              <li class="flex gap-4">
+                <span class="flex-none w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 grid place-items-center" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 3h5M12 3v4m-6 4h12m-12 0a6 6 0 0 0 12 0M12 17v4"/></svg>
+                </span>
+                <div><p class="font-semibold text-white">Sector specialists</p><p class="text-sm text-slate-400">Focused on two sectors we understand in depth.</p></div>
+              </li>
+              <li class="flex gap-4">
+                <span class="flex-none w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 grid place-items-center" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 0 0-5-3.9M9 20H2v-2a4 4 0 0 1 7-2.6M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
+                </span>
+                <div><p class="font-semibold text-white">Permanent &amp; contract</p><p class="text-sm text-slate-400">Flexible hiring for projects and long-term teams.</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT US ============================= -->
+    <section id="about" class="py-20 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div class="lg:col-span-6">
+            <p class="text-sm font-semibold uppercase tracking-wider text-emerald-600">About Us</p>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-navy-900">A consultative approach to specialist hiring</h2>
+            <!-- About text (British English) -->
+            <p class="mt-6 text-lg leading-relaxed text-slate-600">
+              Safetech Resourcing Ltd is a specialised recruitment consultancy dedicated to connecting forward-thinking organisations with exceptional talent across the Information Technology (IT) and Environmental sectors. We pride ourselves on a rigorous, consultative approach to talent acquisition, matching highly skilled professionals with pivotal permanent and contract roles that drive innovation, sustainability, and technological advancement.
+            </p>
+          </div>
+
+          <!-- Sector cards -->
+          <div class="lg:col-span-6 grid sm:grid-cols-2 gap-5">
+            <article class="rounded-xl border border-slate-200 p-6 hover:border-navy-700/30 hover:shadow-lg transition">
+              <span class="w-11 h-11 rounded-lg bg-navy-100 text-navy-800 grid place-items-center" aria-hidden="true">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path stroke-linecap="round" d="M8 20h8M12 16v4M8 9l-2 1.5L8 12m8-3 2 1.5-2 1.5m-3-4-2 5"/></svg>
+              </span>
+              <h3 class="mt-4 text-lg font-semibold text-navy-900">Information Technology</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">Technical and digital professionals for permanent teams and project-based contract delivery.</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-6 hover:border-emerald-500/40 hover:shadow-lg transition">
+              <span class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 grid place-items-center" aria-hidden="true">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19c3-4 6-7 10-9"/></svg>
+              </span>
+              <h3 class="mt-4 text-lg font-semibold text-navy-900">Environmental</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">Environmental, social and sustainability specialists, including impact assessment and lender-standards expertise.</p>
+            </article>
+
+            <!-- How we work -->
+            <div class="sm:col-span-2 rounded-xl bg-slate-50 border border-slate-200 p-6">
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500">How we work</h3>
+              <ol class="mt-4 grid sm:grid-cols-3 gap-4 text-sm">
+                <li><span class="block text-emerald-600 font-bold">01</span><span class="font-semibold text-navy-900">Understand</span><span class="block text-slate-600">We take a detailed brief on the role, team and project.</span></li>
+                <li><span class="block text-emerald-600 font-bold">02</span><span class="font-semibold text-navy-900">Assess</span><span class="block text-slate-600">We screen candidates on technical fit and experience.</span></li>
+                <li><span class="block text-emerald-600 font-bold">03</span><span class="font-semibold text-navy-900">Match</span><span class="block text-slate-600">We present a focused shortlist and support through to start.</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= CURRENT VACANCIES ========================= -->
+    <section id="vacancies" class="py-20 sm:py-24 bg-slate-50 border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-wider text-emerald-600">Current Vacancies</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-navy-900">Open roles</h2>
+          <p class="mt-4 text-lg text-slate-600">Explore our live opportunities below. All applications are treated in confidence.</p>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-3 gap-6 items-start">
+
+          <!-- Job card: EIA Consultant -->
+          <article class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="h-1.5 bg-gradient-to-r from-navy-800 via-navy-700 to-emerald-500" aria-hidden="true"></div>
+            <div class="p-6 sm:p-8">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-2.5 py-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Actively recruiting</span>
+                <span class="rounded-full bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1">Environmental</span>
+              </div>
+
+              <h3 class="mt-4 text-2xl font-bold text-navy-900">EIA Consultant</h3>
+              <p class="text-slate-500 font-medium">Environmental Impact Assessment</p>
+
+              <!-- Key facts -->
+              <dl class="mt-6 grid sm:grid-cols-2 gap-4">
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-navy-700 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M3 10h18M8 3v4m8-4v4"/></svg>
+                  <div><dt class="text-xs uppercase tracking-wide text-slate-500 font-semibold">Contract</dt><dd class="text-navy-900 font-medium">12-month initial contract, with potential extension</dd></div>
+                </div>
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-navy-700 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>
+                  <div><dt class="text-xs uppercase tracking-wide text-slate-500 font-semibold">Location</dt><dd class="text-navy-900 font-medium">Fully remote (UK-based candidates)</dd></div>
+                </div>
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-navy-700 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M14.5 8.5c-.6-.6-1.5-1-2.5-1-2 0-3 1.2-3 3v6m-1.5-3.5h5m-5 3.5h7"/></svg>
+                  <div><dt class="text-xs uppercase tracking-wide text-slate-500 font-semibold">Day rate</dt><dd class="text-navy-900 font-semibold">£300 – £350 per day</dd></div>
+                </div>
+                <div class="flex gap-3 sm:col-span-2">
+                  <svg class="w-5 h-5 text-navy-700 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0v7m-6-9.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg>
+                  <!-- Conduct Regulations 2003 (reg. 27): adverts should state experience/qualifications required. TODO: refine if needed -->
+                  <div><dt class="text-xs uppercase tracking-wide text-slate-500 font-semibold">Experience required</dt><dd class="text-navy-900 font-medium">Demonstrable ESIA delivery experience against international lender standards (IFC PS / World Bank ESF)</dd></div>
+                </div>
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-navy-700 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16v12H4zM9 7V5h6v2m-6 6h6"/></svg>
+                  <div><dt class="text-xs uppercase tracking-wide text-slate-500 font-semibold">Right to work</dt><dd class="text-navy-900 font-medium">Must hold the right to work in the UK</dd></div>
+                </div>
+                <div class="flex gap-3">
+                  <svg class="w-5 h-5 text-navy-700 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6M7 3h7l5 5v13H7z"/></svg>
+                  <div><dt class="text-xs uppercase tracking-wide text-slate-500 font-semibold">IR35 status</dt><dd class="text-navy-900 font-medium">To be determined by the end client via a Status Determination Statement (SDS) before the contractor starts work</dd></div>
+                </div>
+              </dl>
+
+              <!-- Role summary -->
+              <div class="mt-7 border-t border-slate-100 pt-6">
+                <h4 class="font-semibold text-navy-900">The role</h4>
+                <p class="mt-2 text-slate-600 leading-relaxed">
+                  Planning, coordinating and overseeing client-side delivery of Environmental and Social Impact Assessments (ESIAs) in line with international lender standards, including the IFC Performance Standards and the World Bank Environmental and Social Framework (ESF).
+                </p>
+                <ul class="mt-4 space-y-2 text-slate-600">
+                  <li class="flex gap-2"><svg class="w-5 h-5 text-emerald-500 flex-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4 10-10"/></svg>Plan and coordinate ESIA programmes from the client side</li>
+                  <li class="flex gap-2"><svg class="w-5 h-5 text-emerald-500 flex-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4 10-10"/></svg>Oversee consultant deliverables for quality and lender compliance</li>
+                  <li class="flex gap-2"><svg class="w-5 h-5 text-emerald-500 flex-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4 10-10"/></svg>Apply IFC Performance Standards and World Bank ESF requirements</li>
+                </ul>
+              </div>
+
+              <!-- Regulatory disclosure (Conduct of Employment Agencies and Employment Businesses Regulations 2003) -->
+              <p class="mt-6 text-xs text-slate-500 bg-slate-50 rounded-md px-3 py-2">
+                Safetech Resourcing Ltd is acting as an employment business in relation to this vacancy, supplying a daily-rate contractor.
+              </p>
+
+              <!-- Apply -->
+              <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4">
+                <a href="mailto:syed.tahir@safetechresourcing.co.uk?subject=Application%20for%20EIA%20Consultant" class="inline-flex justify-center items-center px-6 py-3 rounded-md bg-navy-900 text-white font-semibold hover:bg-navy-800 focus:outline-none focus:ring-2 focus:ring-navy-700 focus:ring-offset-2">
+                  Apply Now
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                </a>
+                <p class="text-sm text-slate-500">Email your CV and availability. See our <a href="#privacy" class="underline hover:text-navy-900">Privacy Notice</a>.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coming soon / register interest -->
+          <aside class="rounded-2xl bg-navy-900 text-white p-6 sm:p-8 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-emerald-500/20 blur-2xl" aria-hidden="true"></div>
+            <span class="relative w-11 h-11 rounded-lg bg-emerald-500/15 text-emerald-400 grid place-items-center" aria-hidden="true">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 0 0-4-5.7V5a2 2 0 1 0-4 0v.3A6 6 0 0 0 6 11v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0v1a3 3 0 1 1-6 0v-1m6 0H9"/></svg>
+            </span>
+            <h3 class="relative mt-5 text-xl font-bold">More roles coming soon</h3>
+            <p class="relative mt-3 text-slate-300 leading-relaxed">
+              More exciting IT and Environmental vacancies are coming soon. Register your interest or check back regularly for updates.
+            </p>
+            <a href="mailto:syed.tahir@safetechresourcing.co.uk?subject=Register%20Interest%20-%20IT%20%2F%20Environmental%20Roles&body=Name%3A%0D%0ASector%20(IT%20%2F%20Environmental)%3A%0D%0ARole%20type%20(Permanent%20%2F%20Contract)%3A%0D%0AAvailability%3A%0D%0A%0D%0APlease%20attach%20your%20CV." class="relative mt-6 inline-flex w-full justify-center items-center px-5 py-3 rounded-md bg-emerald-500 text-navy-950 font-semibold hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300">
+              Register Your Interest
+            </a>
+            <p class="relative mt-3 text-xs text-slate-400 text-center">Opens your email app with a short template.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMPLIANCE, TRUST & PRIVACY ===================== -->
+    <section id="compliance" class="py-20 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-wider text-emerald-600">Compliance &amp; Trust</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-navy-900">Transparent, compliant, secure</h2>
+        </div>
+
+        <!-- Highlighted ICO badge card -->
+        <div class="mt-10 rounded-2xl border-2 border-emerald-500/40 bg-gradient-to-br from-emerald-50 to-white p-6 sm:p-10 shadow-sm">
+          <div class="flex flex-col md:flex-row gap-6 md:items-center">
+            <div class="flex-none w-20 h-20 rounded-2xl bg-navy-900 grid place-items-center shadow-lg" aria-hidden="true">
+              <svg class="w-11 h-11" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.5 20 6v6c0 5-3.4 8.6-8 9.5-4.6-.9-8-4.5-8-9.5V6l8-3.5z" stroke="#10B981"/>
+                <rect x="8.5" y="10.5" width="7" height="5.5" rx="1" stroke="#fff"/>
+                <path d="M10 10.5V9a2 2 0 0 1 4 0v1.5" stroke="#fff"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl sm:text-2xl font-bold text-navy-900">Data Protection &amp; Compliance</h3>
+              <p class="mt-3 text-slate-700 leading-relaxed">
+                Safetech Resourcing Ltd is officially registered with the Information Commissioner's Office (ICO), ensuring full legal compliance, transparency, and data security for all candidates and clients.
+              </p>
+              <p class="mt-4 inline-flex flex-wrap items-center gap-2 text-sm">
+                <span class="font-semibold text-navy-900">ICO Registration No:</span>
+                <span class="font-mono bg-white border border-slate-200 rounded px-2 py-0.5">ZC294771</span>
+                <a href="https://ico.org.uk/ESDWebPages/Search" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline hover:text-emerald-600">Verify on the ICO register ↗</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supporting trust points -->
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="rounded-xl border border-slate-200 p-6">
+            <h3 class="font-semibold text-navy-900">UK GDPR aligned</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">Personal data is processed lawfully, kept only as long as needed, and never sold.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 p-6">
+            <h3 class="font-semibold text-navy-900">Consent before submission</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">We will not send your CV to any client without discussing the role with you first.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 p-6">
+            <h3 class="font-semibold text-navy-900">No fees for candidates</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">In line with the Conduct of Employment Agencies and Employment Businesses Regulations 2003, we never charge candidates a fee for finding them work.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 p-6">
+            <h3 class="font-semibold text-navy-900">Equal opportunities</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">We welcome applications from all backgrounds and do not discriminate on any characteristic protected by the Equality Act 2010. Tell us if you need any adjustments during the process.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 p-6">
+            <h3 class="font-semibold text-navy-900">Right-to-work checks</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">All candidates must have the legal right to work in the UK. Right-to-work checks are carried out fairly and consistently for every candidate before placement.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 p-6 sm:col-span-2 lg:col-span-2">
+            <h3 class="font-semibold text-navy-900">Registered UK company</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">Registered in England and Wales, Company No. 17554394. <a href="https://find-and-update.company-information.service.gov.uk/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline">Check Companies House ↗</a></p>
+          </div>
+        </div>
+
+        <!-- Privacy Notice (expandable, keeps the site to a single file) -->
+        <!-- TODO: review this notice and adjust it to match how you actually handle data -->
+        <details id="privacy" class="mt-8 group rounded-xl border border-slate-200 bg-slate-50 open:bg-white open:shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between p-6 font-semibold text-navy-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl">
+            <span>Privacy Notice</span>
+            <svg class="w-5 h-5 text-slate-500 transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed space-y-4 max-w-4xl">
+            <p><strong class="text-navy-900">Who we are.</strong> Safetech Resourcing Ltd ("we", "us") is the data controller for personal data you share with us. Contact: <a href="mailto:syed.tahir@safetechresourcing.co.uk" class="underline">syed.tahir@safetechresourcing.co.uk</a>.</p>
+            <p><strong class="text-navy-900">What we collect.</strong> Information you send us, such as your name, contact details, CV, employment history, qualifications, right-to-work status and availability, and details of client enquiries.</p>
+            <p><strong class="text-navy-900">Why we use it.</strong> To assess your suitability for roles, introduce you to clients (only with your agreement), and manage our recruitment services. Our lawful bases are legitimate interests, taking steps towards a contract, and compliance with legal obligations.</p>
+            <p><strong class="text-navy-900">Who we share it with.</strong> Prospective clients for specific roles you have agreed to be put forward for, and trusted service providers who help us operate (for example, email hosting). We never sell your data.</p>
+            <p><strong class="text-navy-900">How long we keep it.</strong> Only as long as necessary for recruitment purposes. If we have had no contact with you for 24 months, we will delete or anonymise your data.</p>
+            <p><strong class="text-navy-900">Special category data.</strong> Please do not include sensitive information (for example health, religion or ethnicity) in your CV unless it is relevant to a reasonable adjustment you want us to know about.</p>
+            <p><strong class="text-navy-900">Transfers.</strong> Your data is stored with UK-based or adequately protected service providers. If data is transferred outside the UK, we make sure appropriate safeguards are in place as required by UK data protection law.</p>
+            <p><strong class="text-navy-900">Your rights.</strong> Under the UK GDPR and the Data Protection Act 2018, you can ask to access, correct, delete or restrict use of your data, object to its use, or request a copy in a portable format, by emailing us. We will respond within one month. If you are unhappy with how we handle your data, please contact us first so we can try to put it right. You also have the right to complain to the Information Commissioner's Office at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener noreferrer" class="underline">ico.org.uk</a>.</p>
+            <p><strong class="text-navy-900">Cookies.</strong> This website does not set cookies or use analytics or tracking, so no cookie banner is required under the Privacy and Electronic Communications Regulations (PECR). The page loads its styling from a third-party content delivery network (cdn.tailwindcss.com), which will see your IP address as part of normal web traffic, and is hosted on GitHub Pages, which may log visitor IP addresses for security.</p>
+            <p class="text-xs text-slate-500">Last updated: November 2026.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section id="contact" class="py-20 sm:py-24 bg-slate-50 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-wider text-emerald-600">Contact</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-navy-900">Let's talk</h2>
+          <p class="mt-4 text-lg text-slate-600">Whether you're hiring or looking for your next role, we'd be glad to hear from you.</p>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-3 gap-6">
+          <!-- Clients -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col">
+            <h3 class="text-lg font-semibold text-navy-900">For clients</h3>
+            <p class="mt-2 text-slate-600 flex-1">Need IT or Environmental specialists for a permanent hire or a contract project? Share your brief and we'll respond promptly.</p>
+            <a href="mailto:syed.tahir@safetechresourcing.co.uk?subject=Client%20Enquiry%20-%20Recruitment%20Requirement" class="mt-6 inline-flex justify-center px-5 py-3 rounded-md bg-navy-900 text-white font-semibold hover:bg-navy-800">Send a Brief</a>
+          </div>
+          <!-- Candidates -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col">
+            <h3 class="text-lg font-semibold text-navy-900">For candidates</h3>
+            <p class="mt-2 text-slate-600 flex-1">Exploring permanent or contract opportunities? Send your CV and tell us what you're looking for.</p>
+            <a href="mailto:syed.tahir@safetechresourcing.co.uk?subject=Candidate%20Enquiry" class="mt-6 inline-flex justify-center px-5 py-3 rounded-md bg-emerald-600 text-white font-semibold hover:bg-emerald-500">Send Your CV</a>
+          </div>
+          <!-- Details -->
+          <div class="bg-navy-900 text-white rounded-2xl p-6 sm:p-8">
+            <h3 class="text-lg font-semibold">Contact details</h3>
+            <ul class="mt-5 space-y-5">
+              <li class="flex gap-3">
+                <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"/></svg>
+                <div><p class="text-xs uppercase tracking-wide text-slate-400 font-semibold">Email</p><a href="mailto:syed.tahir@safetechresourcing.co.uk" class="font-medium break-all hover:text-emerald-300">syed.tahir@safetechresourcing.co.uk</a></div>
+              </li>
+              <li class="flex gap-3">
+                <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                <div><p class="text-xs uppercase tracking-wide text-slate-400 font-semibold">Location</p><p class="font-medium">Telford, United Kingdom</p><p class="text-sm text-slate-400">Operating UK-wide</p></div>
+              </li>
+              <li class="flex gap-3">
+                <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+                <div><p class="text-xs uppercase tracking-wide text-slate-400 font-semibold">Phone</p><a href="tel:+447343130407" class="font-medium hover:text-emerald-300">07343 130407</a></div>
+              </li>
+              <!-- TODO (optional): uncomment and add your LinkedIn company page
+              <li class="flex gap-3">
+                <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-none" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.5-2.1 2.9V21h-4z"/></svg>
+                <div><p class="text-xs uppercase tracking-wide text-slate-400 font-semibold">LinkedIn</p><a href="[LINKEDIN URL]" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-emerald-300">Safetech Resourcing Ltd</a></div>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="bg-navy-950 text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <p class="text-white font-bold text-lg">Safetech Resourcing <span class="text-emerald-400">Ltd</span></p>
+          <p class="mt-2 text-sm">Specialised Recruitment Solutions in IT &amp; Environmental Sectors.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <p class="text-white font-semibold text-sm">Quick links</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#about" class="hover:text-white">About Us</a></li>
+            <li><a href="#vacancies" class="hover:text-white">Current Vacancies</a></li>
+            <li><a href="#compliance" class="hover:text-white">Compliance &amp; Trust</a></li>
+            <li><a href="#privacy" id="privacyLink" class="hover:text-white">Privacy Notice</a></li>
+            <li><a href="#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- Statutory company information (Companies Act disclosure) -->
+        <div class="text-sm space-y-1">
+          <p class="text-white font-semibold">Company information</p>
+          <p>Safetech Resourcing Ltd</p>
+          <p>Registered in England and Wales</p>
+          <p>Company No. 17554394</p>
+          <p>Tel: <a href="tel:+447343130407" class="hover:text-white">07343 130407</a></p>
+          <p>Email: <a href="mailto:syed.tahir@safetechresourcing.co.uk" class="hover:text-white break-all">syed.tahir@safetechresourcing.co.uk</a></p>
+          <p>Registered office: 129b–129c Crescent Road, Hadley, Telford, England, TF1 5LE</p>
+          <p>ICO Registration No. ZC294771</p>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3 justify-between text-xs">
+        <p>Copyright © <span id="year">2026</span> Safetech Resourcing Ltd. All rights reserved. Registered with the ICO.</p>
+        <a href="#top" class="hover:text-white">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================== SCRIPTS ============================== -->
+  <script>
+    // Mobile menu toggle
+    (function () {
+      var btn = document.getElementById('menuBtn');
+      var menu = document.getElementById('mobileMenu');
+      var iconOpen = document.getElementById('iconOpen');
+      var iconClose = document.getElementById('iconClose');
+      function setOpen(open) {
+        menu.classList.toggle('hidden', !open);
+        iconOpen.classList.toggle('hidden', open);
+        iconClose.classList.toggle('hidden', !open);
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      btn.addEventListener('click', function () { setOpen(menu.classList.contains('hidden')); });
+      // Close the menu after tapping a link
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+    })();
+
+    // Open the Privacy Notice automatically when linked to
+    (function () {
+      var details = document.getElementById('privacy');
+      function openIfTarget() { if (location.hash === '#privacy') details.open = true; }
+      document.querySelectorAll('a[href="#privacy"]').forEach(function (a) {
+        a.addEventListener('click', function () { details.open = true; });
+      });
+      window.addEventListener('hashchange', openIfTarget);
+      openIfTarget();
+    })();
+
+    // Keep the copyright year current automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
