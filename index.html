@@ -635,6 +635,21 @@
       var app = document.getElementById('emailApp');
       var gmail = document.getElementById('emailGmail');
       var outlook = document.getElementById('emailOutlook');
+      var ua = navigator.userAgent || '';
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isMobile = isAndroid || isIOS;
+
+      // On a phone, try the app; if it is not installed (page still showing), fall back to the email app.
+      [gmail, outlook].forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          if (!isMobile || btn.href.indexOf('mailto:') === 0) return;
+          e.preventDefault();
+          var target = btn.href, fallback = btn.dataset.fallback;
+          window.location.href = target;
+          setTimeout(function () { if (!document.hidden && fallback) window.location.href = fallback; }, 1600);
+        });
+      });
 
       function params(href) {
         var q = href.split('?')[1] || '';
@@ -653,9 +668,18 @@
           var su = encodeURIComponent(p.subject), bo = encodeURIComponent(p.body);
           subjectEl.textContent = p.subject ? 'Subject: ' + p.subject : '';
           copied.textContent = '';
-          app.href = link.getAttribute('href');
-          gmail.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + ADDRESS + '&su=' + su + '&body=' + bo;
-          outlook.href = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + ADDRESS + '&subject=' + su + '&body=' + bo;
+          var mailto = link.getAttribute('href');
+          app.href = mailto;
+          if (isMobile) {
+            // Phones: open the Gmail / Outlook APP straight on a new email.
+            // (Gmail's web compose link only opens the inbox on a phone.)
+            gmail.href = isAndroid ? mailto : 'googlegmail://co?to=' + ADDRESS + '&subject=' + su + '&body=' + bo;
+            outlook.href = 'ms-outlook://compose?to=' + ADDRESS + '&subject=' + su + '&body=' + bo;
+            gmail.dataset.fallback = outlook.dataset.fallback = mailto;
+          } else {
+            gmail.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + ADDRESS + '&su=' + su + '&body=' + bo;
+            outlook.href = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + ADDRESS + '&subject=' + su + '&body=' + bo;
+          }
           panel.showModal();
         });
       });
